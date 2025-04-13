@@ -18,10 +18,9 @@ class Settings(BaseSettings):
         return (f"{self.DB_DRIVER}://{self.DB_USER}:{self.DB_PASSWORD}@"
                 f"{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}")
 
-
-class Config:
-    env_file = ".env"
-    extra = "ignore"
+    class Config:
+        env_file = ".env"
+        extra = "ignore"
 
 
 @lru_cache()
