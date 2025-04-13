@@ -5,7 +5,11 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
-engine = create_async_engine(settings.DATABASE_URL, echo=True, future=True)
+engine = create_async_engine(
+    settings.DATABASE_URL,
+    echo=settings.DATABASE_ECHO,
+    future=True
+)
 
 # ⬇️ DI-ready сессионная фабрика
 async_session = sessionmaker(  # type: ignore
