@@ -2,7 +2,7 @@ from typing import Optional
 from sqlmodel import SQLModel, Field
 from datetime import datetime, UTC
 from pydantic import EmailStr  # noqa
-from app.models import UserRole
+from app.models.enums import UserRole
 
 
 class User(SQLModel, table=True):
